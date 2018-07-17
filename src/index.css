@@ -4,12 +4,54 @@ body {
   font-family: sans-serif;
 }
 
-
-.tarotCards {
-  color: blue;
-  display: block;
-  border: 1px solid black;
-  margin: 10px;
-  padding: 10px;
+button {
   text-align: center;
+}
+
+.buttonGroup {
+  padding-top: 15px;
+}
+
+.buttonHeader {
+  background-color: black;
+  height: 50px;
+}
+
+.tarotCardContainer {
+  display: block;
+  border: 10px solid orange;
+}
+
+.tarotCard {
+  color: blue;
+  display: inline-block;
+  width: 100%;
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+}
+
+img {
+  position: relative;
+  max-height: 300px;
+}
+
+.wrapper {
+  height: 500px;
+  width: 100%;
+  border: 20px solid blue;
+}
+
+#cardContainer {
+  background-color: yellow;
+}
+
+#cardImage {
+  max-height: inherit;
+  border: 20px solid red;
+}
+
+#cardInfo {
+  border: 20px solid purple;
+  position: relative;
 }

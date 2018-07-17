@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import theFool from './images/TheFool.jpg';
+import theHighPriestess from './images/TheHighPriestess.jpg';
+import theEmpress from './images/TheEmpress.jpg';
+import theEmperor from './images/TheEmperor.jpg';
+import theMagician from './images/TheMagician.jpg';
+import NewCardButton from './components/new_card_button';
+import TarotCardList from './components/tarot_card_list';
 
 class App extends React.Component {
+
   state = {
     cards: [
       {
@@ -9,30 +17,35 @@ class App extends React.Component {
         title: 'The Magician',
         numericValue: 1,
         message: 'Create a new reality for yourself.',
+        src: theMagician,
       },
       {
         id: 2,
         title: 'The Popess',
         numericValue: 2,
         message: 'Know how to set boundaries.',
+        src: theHighPriestess,
       },
       {
         id: 3,
         title: 'The Empress',
         numericValue: 3,
         message: 'Act from the guts.',
+        src: theEmpress,
       },
       {
         id: 4,
         title: 'The Emperor',
         numericValue: 4,
         message: 'Show leadership and responsibility.',
+        src: theEmperor,
       },
       {
         id: 5,
         title: 'The Pope',
         numericValue: 5,
         message: 'Create a new reality for yourself.',
+        src: theFool,
       },
     ],
 
@@ -40,93 +53,55 @@ class App extends React.Component {
 
   };
 
-
   handleSubmit = (e) => {
     e.preventDefault();
     let numCards = this.state.numCards;
-    this.setState({ numCards: (this.state.numCards + 1) })
+    if(numCards < this.state.cards.length){
+      this.setState({ numCards: (this.state.numCards + 1) })
+    }
   }
 
   handleTrash = (e) => {
     e.preventDefault();
-    this.setState({ numCards: 0 })
+    this.shuffle();
+    this.setState({ numCards: 0 });
+  }
+
+  handleShuffle = (e) => {
+    e.preventDefault();
+    this.shuffle();
+  }
+
+  shuffle = () => {
+    let cards = Object.assign([], this.state.cards);
+    let counter = this.state.cards.length - 1;
+    for(counter; counter >= 0; counter--) {
+      let index = Math.floor(Math.random() * (counter + 1));
+      let temp = cards[counter];
+      cards[counter] = cards[index];
+      cards[index] = temp;
+    };
+    this.setState({ cards: cards })
   }
 
   render() {
     return (
-    <div className='tarotCardApp'>
-      <NewCardButton
-        handleSubmit={this.handleSubmit}
-        handleTrash={this.handleTrash}
-      />
-      <TarotCardList
-        cards={this.state.cards}
-        numCards={this.state.numCards}
-       />
-      </div>
-    );
-  }
-}
+      <div className='appContainer'>
+        <div className='buttonContainer'>
+          <NewCardButton
+            handleSubmit={this.handleSubmit}
+            handleTrash={this.handleTrash}
 
-class TarotCardList extends React.Component {
-
-
-  render() {
-    const deckList = [];
-    for(var i = 0; i < this.props.numCards; i ++){
-      deckList.push(this.props.cards[i]);
-    }
-
-
-    const cards = deckList.map((card) => (
-      <TarotCard
-        title={card.title}
-        numericValue={card.numericValue}
-        message={card.message}
-      />
-    ));
-
-    return (
-      <div id="cards">
-        {cards}
-      </div>
-
-    );
-  }
-}
-
-class TarotCard extends React.Component {
-  render() {
-    return (
-      <div className="tarotCards">
-        <div>
-          <h1>{this.props.title}</h1>
+          />
         </div>
-        <div>
-          <h3>{this.props.numericValue}</h3>
-          <h3>{this.props.message}</h3>
+        <div className='tarotCardContainer'>
+          <TarotCardList
+            cards={this.state.cards}
+            numCards={this.state.numCards}
+           />
         </div>
       </div>
-    )
-  }
-}
-
-class NewCardButton extends React.Component {
-  render(){
-    return (
-      <div className='newCardButton'>
-        <button
-          onClick={this.props.handleSubmit}
-        >
-          Deal Card
-        </button>
-        <button
-          onClick={this.props.handleTrash}
-        >
-          New Reading!
-        </button>
-      </div>
-    )
+    );
   }
 }
 
