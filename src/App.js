@@ -86,21 +86,22 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='appContainer'>
-        <div className='buttonContainer'>
-          <NewCardButton
-            handleSubmit={this.handleSubmit}
-            handleTrash={this.handleTrash}
+        <div className="container-fluid">
+          <nav className="navbar navbar-light bg-light fixed-top">
+            <a className="navbar-brand">Tarot</a>
+            <NewCardButton
+              handleSubmit={this.handleSubmit}
+              handleTrash={this.handleTrash}
 
-          />
+            />
+          </nav>
+          <div className='tarotCardContainer'>
+            <TarotCardList
+              cards={this.state.cards}
+              numCards={this.state.numCards}
+             />
+          </div>
         </div>
-        <div className='tarotCardContainer'>
-          <TarotCardList
-            cards={this.state.cards}
-            numCards={this.state.numCards}
-           />
-        </div>
-      </div>
     );
   }
 }

@@ -1,57 +1,80 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-
 button {
-  text-align: center;
+  margin-right: 10px;
 }
 
-.buttonGroup {
-  padding-top: 15px;
-}
-
-.buttonHeader {
-  background-color: black;
-  height: 50px;
-}
-
-.tarotCardContainer {
-  display: block;
-  border: 10px solid orange;
-}
-
-.tarotCard {
-  color: blue;
-  display: inline-block;
-  width: 100%;
-  border: 1px solid black;
-  padding: 10px;
-  text-align: left;
-}
-
-img {
-  position: relative;
-  max-height: 300px;
+.container-fluid {
+  padding: 0px;
 }
 
 .wrapper {
-  height: 500px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap:10px
+}
+
+.tarotCardContainer {
+  padding-top: 6%;
+}
+
+.cardsContainer {
   width: 100%;
-  border: 20px solid blue;
 }
 
-#cardContainer {
-  background-color: yellow;
+.tarotCard {
+  border: 10px solid green;
+  height: 500px;
+  margin: auto;
+  margin-bottom: 10px;
 }
 
-#cardImage {
-  max-height: inherit;
-  border: 20px solid red;
+img {
+  height: 100%;
+  width: 100%;
+  border-radius: 22px;
 }
 
-#cardInfo {
-  border: 20px solid purple;
+/* entire container, keeps perspective */
+.flip-container {
+  margin-left: auto;
+  margin-right: auto;
+	perspective: 1000px;
+  display: inline-block;
   position: relative;
+}
+
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+	transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+	width: 300px;
+	height: 500px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
 }
