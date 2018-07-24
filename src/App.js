@@ -5,8 +5,8 @@ import theHighPriestess from './images/TheHighPriestess.jpg';
 import theEmpress from './images/TheEmpress.jpg';
 import theEmperor from './images/TheEmperor.jpg';
 import theMagician from './images/TheMagician.jpg';
-import NewCardButton from './components/new_card_button';
-import TarotCardList from './components/tarot_card_list';
+import AppMenu from './components/new_card_button';
+import TarotCardList from './components/tarot_card_list'
 
 class App extends React.Component {
 
@@ -86,15 +86,13 @@ class App extends React.Component {
 
   render() {
     return (
-        <div className="container-fluid">
-          <nav className="navbar navbar-light bg-light fixed-top">
-            <a className="navbar-brand">Tarot</a>
-            <NewCardButton
+        <div>
+          <div>
+            <AppMenu
               handleSubmit={this.handleSubmit}
               handleTrash={this.handleTrash}
-
             />
-          </nav>
+          </div>
           <div className='tarotCardContainer'>
             <TarotCardList
               cards={this.state.cards}

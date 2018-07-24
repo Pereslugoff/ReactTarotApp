@@ -9,7 +9,8 @@ button {
 .wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap:10px
+  grid-gap:10px;
+  border: 10px solid blue;
 }
 
 .tarotCardContainer {
@@ -57,6 +58,8 @@ img {
 	transition: 0.6s;
 	transform-style: preserve-3d;
 	position: relative;
+  animation-duration: 2s;
+  animation-name: slidein;
 }
 
 /* hide back of pane during swap */
@@ -77,4 +80,15 @@ img {
 /* back, initially hidden pane */
 .back {
 	transform: rotateY(180deg);
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 400%;
+    width: 900%
+  }
+  to {
+    margin-left: 0%;
+    width: 100%
+  }
 }
