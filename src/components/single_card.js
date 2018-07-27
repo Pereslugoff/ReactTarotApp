@@ -14,7 +14,7 @@ class SingleCard extends Component {
 
 
     return (
-      <div>
+      <div className="cardContainer">
         <div className="flip-container" onClick={this.handleOpen}>
         	<div className="flipper">
               <div className="front">

@@ -10,7 +10,7 @@ button {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap:10px;
-  border: 10px solid blue;
+  /*border: 10px solid blue;*/
 }
 
 .tarotCardContainer {
@@ -38,9 +38,11 @@ img {
 
 /* entire container, keeps perspective */
 .flip-container {
+  margin-left: auto;
+  margin-right: auto;
 	perspective: 1000px;
-  display: inline-block;
   position: relative;
+  animation: slidein 2s;
 }
 
 /* flip the pane when hovered */
@@ -82,9 +84,9 @@ img {
 
 @keyframes slidein {
   from {
-    margin-left: 100%;
+    transform: translateX(400%)
   }
   to {
-    margin-left: 33%;
+    margin-left: 1fr;
   }
 }
