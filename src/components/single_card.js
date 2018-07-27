@@ -17,11 +17,11 @@ class SingleCard extends Component {
       <div>
         <div className="flip-container" onClick={this.handleOpen}>
         	<div className="flipper">
-          		<div className="front">
-          			<img src={this.props.src} />
-          		</div>
+              <div className="front">
+                <img src={theBack} />
+              </div>
           		<div className="back">
-          			<img src={theBack} />
+          			<img src={this.props.src} />
           		</div>
         	</div>
         </div>

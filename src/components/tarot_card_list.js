@@ -32,10 +32,3 @@ class TarotCardList extends React.Component {
 }
 
 export default TarotCardList;
-
-// <TarotCard
-//   title={card.title}
-//   numericValue={card.numericValue}
-//   message={card.message}
-//   src={card.src}
-// />
