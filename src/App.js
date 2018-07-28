@@ -7,7 +7,7 @@ import theEmperor from './images/TheEmperor.jpg';
 import theMagician from './images/TheMagician.jpg';
 import AppMenu from './components/new_card_button';
 import TarotCardList from './components/tarot_card_list'
-import { Dimmer, Segment, Header } from 'semantic-ui-react';
+import { Dimmer, Segment, Header, Container, Modal, Button } from 'semantic-ui-react';
 
 class App extends React.Component {
 
@@ -57,9 +57,7 @@ class App extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     let numCards = this.state.numCards;
-    if(numCards < this.state.cards.length){
-      this.setState({ numCards: (this.state.numCards + 1) })
-    }
+    this.setState({ numCards: (this.state.numCards + 1) })
   }
 
   handleTrash = (e) => {
@@ -92,9 +90,11 @@ class App extends React.Component {
   render() {
 
     return (
-        <div>
-          <div>
+        <Container fluid>
+          <div className="navBar">
             <AppMenu
+              numCards={this.state.numCards}
+              disabled={this.state.disabled}
               handleSubmit={this.handleSubmit}
               handleTrash={this.handleTrash}
             />
@@ -106,7 +106,7 @@ class App extends React.Component {
                 handleShow={this.handleShow}
                />
             </div>
-        </div>
+        </Container>
     );
   }
 }

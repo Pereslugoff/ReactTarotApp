@@ -1,5 +1,30 @@
+body {
+  background-color: rgb(31, 31, 31);
+}
+
 button {
   margin-right: 10px;
+}
+
+.ui.menu {
+    border-radius: 0px !important;
+}
+
+
+.logo {
+  height: 35px;
+  box-shadow: none;
+  padding-top: 10px;
+}
+
+.appName {
+  font-family: 'Philosopher', sans-serif;
+  font-size: 50px;
+}
+
+.menuButtons {
+  font-family: 'Philosopher', sans-serif;
+  font-size: 20px;
 }
 
 .container-fluid {
@@ -32,9 +57,12 @@ button {
 
 img {
   height: 100%;
-  width: 100%;
+  width: 100;
   border-radius: 22px;
+  box-shadow: 10px 5px 5px rgb(25, 25, 25);
 }
+
+/*Dimmer card views*/
 
 /* entire container, keeps perspective */
 .flip-container {
@@ -42,7 +70,7 @@ img {
   margin-right: auto;
 	perspective: 1000px;
   position: relative;
-  animation: slidein 2s;
+  /*animation: slidein 2s;*/
 }
 
 /* flip the pane when hovered */
@@ -87,6 +115,6 @@ img {
     transform: translateX(400%)
   }
   to {
-    margin-left: 1fr;
+    margin-left: translateX(0%);
   }
 }

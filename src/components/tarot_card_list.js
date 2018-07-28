@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 import TarotCard from './tarot_card';
 import SingleCard from './single_card';
-import { Button, Dimmer, Header, Image, Segment } from 'semantic-ui-react';
+import { Container, Modal, Button } from 'semantic-ui-react';
 
 class TarotCardList extends React.Component {
+
+  state = {
+    open: false
+  }
+
+  handleOpen = (e) => {
+    e.preventDefault();
+    this.setState({ open: true })
+  }
 
   render() {
 
@@ -13,19 +22,23 @@ class TarotCardList extends React.Component {
     }
 
     const cards = deckList.map((card) => (
-      <SingleCard
-        key={card.id}
-        title={card.title}
-        numericValue={card.numericValue}
-        message={card.message}
-        src={card.src}
-      />
+      <div>
+        <SingleCard
+          key={card.id}
+          title={card.title}
+          numericValue={card.numericValue}
+          message={card.message}
+          src={card.src}
+          onClick={this.handleOpen}
+          open={this.state.open}
+        />
+      </div>
     ));
 
     return (
-      <div className="wrapper">
-        {cards}
-      </div>
+        <div className="wrapper">
+          {cards}
+        </div>
 
     );
   }
