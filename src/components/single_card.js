@@ -13,24 +13,33 @@ class SingleCard extends Component {
       <div className="cardContainer">
         <div className="flip-container" onClick={this.handleOpen}>
         	<div className="flipper">
-              <div className="front">
-                <img src={theBack} />
-              </div>
-          		<div className="back">
-          			<img src={this.props.src} />
-          		</div>
+            <div className="front">
+              <img className="cardImage" src={theBack} />
+            </div>
+        		<div className="back">
+        			<img className="cardImage" src={this.props.src} />
+        		</div>
         	</div>
         </div>
         <Modal
           open={this.state.open}
+          basic
+          size='large'
         >
-          <Modal.Header>{this.props.title}</Modal.Header>
-          <img src={this.props.src} />
-          <Modal.Content>
-            <Modal.Description>
-              <p><Button onClick={this.handleClose}>Close</Button></p>
-            </Modal.Description>
-          </Modal.Content>
+          <div className="dimmerView">
+            <h1 className="dimmerTitle">{this.props.title}</h1>
+            <img
+              className="dimmerImage"
+              src={this.props.src}
+            />
+            <p className="dimmerInfo">{this.props.message}</p>
+            <Button
+              className="dimmerFooter"
+              onClick={this.handleClose}
+            >
+              Close
+            </Button>
+          </div>
         </Modal>
       </div>
     );
@@ -41,15 +50,4 @@ class SingleCard extends Component {
 export default SingleCard
 
 // <Dimmer active={active} onClickOutside={this.handleClose} page>
-//   <div className="dimmerView">
-//     <div className="dimmerImage">
-//       <img src={this.props.src} />
-//     </div>
-//     <div className="dimmerInfo">
-//       <div>
-//         <h1>{this.props.title}</h1>
-//         <p>{this.props.message}</p>
-//       </div>
-//     </div>
-//   </div>
 // </Dimmer>
