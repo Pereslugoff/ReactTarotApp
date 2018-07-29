@@ -5,7 +5,7 @@ import { Dimmer, Modal, Button } from 'semantic-ui-react';
 class SingleCard extends Component {
   state = {}
 
-  handleOpen = () => this.setState({ open: true })
+  handleOpen = () => this.setState({ open: !this.state.open })
   handleClose = () => this.setState({ open: false })
 
   render() {
@@ -33,12 +33,14 @@ class SingleCard extends Component {
               src={this.props.src}
             />
             <p className="dimmerInfo">{this.props.message}</p>
-            <Button
-              className="dimmerFooter"
-              onClick={this.handleClose}
-            >
-              Close
-            </Button>
+            <div className="dimmerFooter">
+              <Button
+
+                onClick={this.handleClose}
+              >
+                Close
+              </Button>
+            </div>
           </div>
         </Modal>
       </div>

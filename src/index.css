@@ -17,12 +17,12 @@ button {
 }
 
 .appName {
-  font-family: 'Philosopher', sans-serif;
+  font-family: 'Aladin', cursive;
   font-size: 50px;
 }
 
 .menuButtons {
-  font-family: 'Philosopher', sans-serif;
+  font-family: 'Aladin', cursive;
   font-size: 20px;
 }
 
@@ -46,36 +46,43 @@ button {
 
 /*Dimmer card views*/
 .dimmerView{
+  padding-top: 8%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  animation: fadein;
+}
+
+.modal {
+  animation: fadein;
 }
 
 .dimmerImage{
-  width: 300px;
-  height: 500px;
+  width: auto;
+  height: 600px;
   grid-column: 1;
   grid-row: 1 / 4;
 }
 
 .dimmerTitle {
-  grid-column: 2;
+  grid-column: 2 / 4;
   grid-row: 1;
   text-align: center;
-  font-family: 'Philosopher', sans-serif;
+  font-family: 'Aladin', cursive;
   font-size: 50px;
 }
 
 .dimmerInfo {
-  grid-column: 2;
+  grid-column: 2 / 4;
   grid-row: 2;
-  font-family: 'Philosopher', sans-serif;
+  font-family: 'Aladin', cursive;
   text-align: center;
   font-size: 30px;
 }
 
 .dimmerFooter {
-  grid-column: 2;
-  grid-row: 4;
+  grid-column: 2 / 4;
+  grid-row: 3;
+  text-align: center;
 }
 /* entire container, keeps perspective */
 .flip-container {
@@ -93,7 +100,7 @@ button {
 
 .flip-container, .front, .back {
 	width: 300px;
-	height: 500px;
+	height: 400px;
 }
 
 /* flip speed goes here */
@@ -130,4 +137,9 @@ button {
   to {
     margin-left: translateX(0%);
   }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
