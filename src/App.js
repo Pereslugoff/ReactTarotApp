@@ -8,7 +8,6 @@ import theEmperor from './images/TheEmperor.jpg';
 import theMagician from './images/TheMagician.jpg';
 import AppMenu from './components/new_card_button';
 import TarotCardList from './components/tarot_card_list'
-import { Dimmer, Segment, Header, Container, Modal, Button } from 'semantic-ui-react';
 
 class App extends React.Component {
 
@@ -72,10 +71,6 @@ class App extends React.Component {
     this.shuffle();
   }
 
-  handleShow = () => this.setState({ active: true });
-
-  handleHide = () => this.setState({ active: false });
-
   shuffle = () => {
     let cards = Object.assign([], this.state.cards);
     let counter = this.state.cards.length - 1;
@@ -91,7 +86,7 @@ class App extends React.Component {
   render() {
 
     return (
-        <Container fluid>
+        <div>
           <div className="navBar">
             <AppMenu
               numCards={this.state.numCards}
@@ -100,14 +95,13 @@ class App extends React.Component {
               handleTrash={this.handleTrash}
             />
           </div>
-            <div className='tarotCardContainer'>
-              <TarotCardList
-                cards={this.state.cards}
-                numCards={this.state.numCards}
-                handleShow={this.handleShow}
-               />
-            </div>
-        </Container>
+          <div className='tarotCardContainer'>
+            <TarotCardList
+              cards={this.state.cards}
+              numCards={this.state.numCards}
+             />
+          </div>
+        </div>
     );
   }
 }

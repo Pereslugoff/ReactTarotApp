@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import theBack from '../images/TheBack.jpg'
-import { Dimmer, Modal, Button } from 'semantic-ui-react';
 
 class SingleCard extends Component {
-  state = {}
-
-  handleOpen = () => this.setState({ open: !this.state.open })
-  handleClose = () => this.setState({ open: false })
-
+  
   render() {
     return (
       <div className="cardContainer">
@@ -21,28 +16,6 @@ class SingleCard extends Component {
         		</div>
         	</div>
         </div>
-        <Modal
-          open={this.state.open}
-          basic
-          size='large'
-        >
-          <div className="dimmerView">
-            <h1 className="dimmerTitle">{this.props.title}</h1>
-            <img
-              className="dimmerImage"
-              src={this.props.src}
-            />
-            <p className="dimmerInfo">{this.props.message}</p>
-            <div className="dimmerFooter">
-              <Button
-
-                onClick={this.handleClose}
-              >
-                Close
-              </Button>
-            </div>
-          </div>
-        </Modal>
       </div>
     );
   }
@@ -51,5 +24,25 @@ class SingleCard extends Component {
 
 export default SingleCard
 
-// <Dimmer active={active} onClickOutside={this.handleClose} page>
-// </Dimmer>
+// <Modal
+//   open={this.state.open}
+//   basic
+//   size='large'
+// >
+//   <div className="dimmerView">
+//     <h1 className="dimmerTitle">{this.props.title}</h1>
+//     <img
+//       className="dimmerImage"
+//       src={this.props.src}
+//     />
+//     <p className="dimmerInfo">{this.props.message}</p>
+//     <div className="dimmerFooter">
+//       <Button
+//
+//         onClick={this.handleClose}
+//       >
+//         Close
+//       </Button>
+//     </div>
+//   </div>
+// </Modal>

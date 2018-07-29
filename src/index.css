@@ -6,14 +6,18 @@ button {
   margin-right: 10px;
 }
 
-.ui.menu {
-    border-radius: 0px !important;
+.navbar {
+  padding: 0;
 }
 
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 1.25em;
+}
 .logo {
   height: 35px;
   box-shadow: none;
-  padding-top: 10px;
 }
 
 .appName {
@@ -22,8 +26,15 @@ button {
 }
 
 .menuButtons {
+  margin-left: auto;
+  margin-right: 0px;
   font-family: 'Aladin', cursive;
   font-size: 20px;
+  padding-right: 1.25em;
+}
+
+.nav-item {
+  padding: 10px;
 }
 
 .wrapper {
@@ -52,9 +63,6 @@ button {
   animation: fadein;
 }
 
-.modal {
-  animation: fadein;
-}
 
 .dimmerImage{
   width: auto;
@@ -99,7 +107,7 @@ button {
 }
 
 .flip-container, .front, .back {
-	width: 300px;
+	width: 230px;
 	height: 400px;
 }
 
