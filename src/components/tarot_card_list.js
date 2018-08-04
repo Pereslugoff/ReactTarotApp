@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import TarotCard from './tarot_card';
 import SingleCard from './single_card';
 
 class TarotCardList extends React.Component {
