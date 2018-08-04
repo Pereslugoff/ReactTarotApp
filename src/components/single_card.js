@@ -10,14 +10,14 @@ class SingleCard extends Component {
           <Card
             key={this.props.key}
             src={this.props.src}
-          />
-        }>
-          <Modal.Header>Select a Photo</Modal.Header>
+          />}
+          className="dimmerView"
+        >
+          <Modal.Header className="dimmerTitle">{this.props.title}</Modal.Header>
           <Modal.Content image>
-            <Modal.Description>
-              <Header>{this.props.title}</Header>
-              <p>Weve found the following gravatar image associated wit/ your e-mail address.</p>
-              <p>Is it okay to use this photo?</p>
+            <Image src={this.props.src} className="dimmerImage"/>
+            <Modal.Description className="dimmerInfo">
+              {this.props.message}
             </Modal.Description>
           </Modal.Content>
         </Modal>
