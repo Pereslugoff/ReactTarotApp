@@ -16,7 +16,6 @@ class TarotCardList extends React.Component {
     }
 
     const cards = deckList.map((card) => (
-      <div>
         <SingleCard
           key={card.id}
           title={card.title}
@@ -24,7 +23,6 @@ class TarotCardList extends React.Component {
           message={card.message}
           src={card.src}
         />
-      </div>
     ));
 
     return (
