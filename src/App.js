@@ -55,8 +55,10 @@ class App extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    let numCards = this.state.numCards;
-    this.setState({ numCards: (this.state.numCards + 1) })
+    let numCards = this.state.numCards + 1;
+    if(numCards < 4){
+      this.setState({ numCards: (this.state.numCards + 1) })
+    }
   }
 
   handleTrash = (e) => {

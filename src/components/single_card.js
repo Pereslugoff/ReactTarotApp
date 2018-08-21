@@ -12,6 +12,7 @@ class SingleCard extends Component {
             src={this.props.src}
           />}
           className="dimmerView"
+          basic
         >
           <Modal.Header className="dimmerTitle">{this.props.title}</Modal.Header>
           <Modal.Content image>

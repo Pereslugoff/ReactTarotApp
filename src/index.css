@@ -26,7 +26,7 @@ body {
 }
 
 .newReading {
-  padding-left: 20px;
+  margin-left: 20px;
 }
 
 .ui.menu .item {
@@ -70,14 +70,12 @@ body {
   grid-column: 2;
   grid-row: 1;
   text-align: center;
-  font-family: 'Philosopher', sans-serif;
   font-size: 50px;
 }
 
 .dimmerInfo {
   grid-column: 2;
   grid-row: 2;
-  font-family: 'Philosopher', sans-serif;
   text-align: center;
   font-size: 30px;
 }
@@ -85,6 +83,10 @@ body {
 .dimmerFooter {
   grid-column: 2;
   grid-row: 4;
+}
+
+.ui.modal {
+  font-family: 'Aladin', cursive;
 }
 /* entire container, keeps perspective */
 .flip-container {
