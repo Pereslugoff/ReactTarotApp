@@ -2,6 +2,18 @@ body {
   background-color: rgb(31, 31, 31);
 }
 
+#a{
+  display: block;
+}
+
+#b{
+  display:none;
+}
+
+#a:hover + #b{
+  display: block;
+}
+
 .ui.menu {
   border-radius: 0px;
   font-family: 'Aladin', cursive;
@@ -34,6 +46,17 @@ body {
   color: black;
 }
 
+.timePosition {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  padding: 0;
+  list-style: none;
+  font-family: 'Aladin', cursive;
+  color: white;
+  font-size: 50px;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -42,7 +65,7 @@ body {
 }
 
 .tarotCardContainer {
-  padding-top: 6%;
+
 }
 
 .cardImage {
@@ -71,6 +94,7 @@ body {
   grid-row: 1;
   text-align: center;
   font-size: 50px;
+  font-family: 'Aladin', cursive;
 }
 
 .dimmerInfo {

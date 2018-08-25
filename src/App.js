@@ -49,11 +49,11 @@ class App extends React.Component {
       },
     ],
 
-    numCards: 0,
+    numCards: 3,
 
   };
 
-  handleSubmit = (e) => {
+  handleNewCard = (e) => {
     e.preventDefault();
     let numCards = this.state.numCards + 1;
     if(numCards < 4){
@@ -61,7 +61,7 @@ class App extends React.Component {
     }
   }
 
-  handleTrash = (e) => {
+  handleNewReading = (e) => {
     e.preventDefault();
     this.shuffle();
     this.setState({ numCards: 0 });
@@ -92,11 +92,16 @@ class App extends React.Component {
             <AppMenu
               numCards={this.state.numCards}
               disabled={this.state.disabled}
-              handleSubmit={this.handleSubmit}
-              handleTrash={this.handleTrash}
+              handleNewCard={this.handleNewCard}
+              handleNewReading={this.handleNewReading}
             />
           </div>
           <div className='tarotCardContainer'>
+            <ul className="timePosition">
+              <li>Past</li>
+              <li>Present</li>
+              <li>Future</li>
+            </ul>
             <TarotCardList
               cards={this.state.cards}
               numCards={this.state.numCards}

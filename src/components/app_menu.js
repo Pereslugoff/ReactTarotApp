@@ -13,19 +13,25 @@ class AppMenu extends Component {
             ReactTar<img src={logo} className="logo" />t
           </Menu.Item>
         </Menu.Menu>
-          <Menu.Menu position="right" className="menuButtons">
-            <Menu.Item
-                onClick={this.props.handleSubmit}
-                disabled={this.props.disabled}
-            >
-              <div>Next Card</div>
-            </Menu.Item>
-            <Menu.Item
-                onClick={this.props.handleTrash}
-            >
-              <div className="newReading" >New Reading</div>
-            </Menu.Item>
-          </Menu.Menu>
+        <Menu.Menu >
+          <Menu.Item>
+            <div id="a">Hover over me</div>
+            <div id="b">Tadaa!</div>
+          </Menu.Item>
+        </Menu.Menu>
+        <Menu.Menu position="right" className="menuButtons">
+          <Menu.Item
+              onClick={this.props.handleNewCard}
+              disabled={this.props.disabled}
+          >
+            <div>Next Card</div>
+          </Menu.Item>
+          <Menu.Item
+              onClick={this.props.handleNewReading}
+          >
+            <div className="newReading" >New Reading</div>
+          </Menu.Item>
+        </Menu.Menu>
       </Menu>
     )
   }
@@ -34,22 +40,3 @@ class AppMenu extends Component {
 
 
 export default AppMenu;
-
-// <nav className="navbar navbar-light bg-light">
-//
-//   <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-//     <div className="navbar-nav">
-//       <a
-//         className="menuButtons nav-item nav-link"
-//         onClick={this.props.handleSubmit}
-//       >
-//         Next Card
-//       </a>
-//       <a
-//         className="menuButtons nav-item nav-link" onClick={this.props.handleTrash}
-//       >
-//         New Reading
-//       </a>
-//     </div>
-//   </div>
-// </nav>
