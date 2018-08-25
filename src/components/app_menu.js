@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../images/ReactLogo.png'
+import logo from '../reactSquare.svg'
 import { Menu } from 'semantic-ui-react';
 
 class AppMenu extends Component {
@@ -11,12 +11,6 @@ class AppMenu extends Component {
         <Menu.Menu className="navbar-brand-container">
           <Menu.Item className="navbar-brand">
             ReactTar<img src={logo} className="logo" />t
-          </Menu.Item>
-        </Menu.Menu>
-        <Menu.Menu >
-          <Menu.Item>
-            <div id="a">Hover over me</div>
-            <div id="b">Tadaa!</div>
           </Menu.Item>
         </Menu.Menu>
         <Menu.Menu position="right" className="menuButtons">
