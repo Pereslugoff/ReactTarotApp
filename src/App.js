@@ -6,48 +6,14 @@ import theEmpress from './images/TheEmpress.jpg';
 import theEmperor from './images/TheEmperor.jpg';
 import theMagician from './images/TheMagician.jpg';
 import AppMenu from './components/app_menu';
-import TarotCardList from './components/tarot_card_list'
+import TarotCardList from './components/tarot_card_list';
+import cardData from './components/cardData';
+
 
 class App extends React.Component {
 
   state = {
-    cards: [
-      {
-        id: 1,
-        title: 'The Magician',
-        numericValue: 1,
-        message: 'Create a new reality for yourself.',
-        src: theMagician,
-      },
-      {
-        id: 2,
-        title: 'The Popess',
-        numericValue: 2,
-        message: 'Know how to set boundaries.',
-        src: theHighPriestess,
-      },
-      {
-        id: 3,
-        title: 'The Empress',
-        numericValue: 3,
-        message: 'Act from the guts.',
-        src: theEmpress,
-      },
-      {
-        id: 4,
-        title: 'The Emperor',
-        numericValue: 4,
-        message: 'Show leadership and responsibility.',
-        src: theEmperor,
-      },
-      {
-        id: 5,
-        title: 'The Pope',
-        numericValue: 5,
-        message: 'Create a new reality for yourself.',
-        src: theFool,
-      },
-    ],
+    cards: cardData,
 
     numCards: 3,
 
