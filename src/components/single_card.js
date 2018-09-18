@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import theBack from '../images/TheBack.jpg'
+import Back from '../images/Back.jpg'
 import { Button, Header, Image, Modal } from 'semantic-ui-react'
 
 class SingleCard extends Component {
@@ -31,7 +31,7 @@ const Card = ({ src, ...otherProps}) => (
         <div className="flip-container">
           <div className="flipper">
             <div className="front">
-              <img className="cardImage" src={theBack} />
+              <img className="cardImage" src={Back} />
             </div>
             <div className="back">
               <img className="cardImage" src={src} />

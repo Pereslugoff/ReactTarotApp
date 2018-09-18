@@ -1,10 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import theFool from './images/TheFool.jpg';
-import theHighPriestess from './images/TheHighPriestess.jpg';
-import theEmpress from './images/TheEmpress.jpg';
-import theEmperor from './images/TheEmperor.jpg';
-import theMagician from './images/TheMagician.jpg';
 import AppMenu from './components/app_menu';
 import TarotCardList from './components/tarot_card_list';
 import cardData from './components/cardData';
