@@ -118,7 +118,7 @@ const CARDDATA =
       id: 14,
       title: 'Death',
       numericValue: 13,
-      message: 'Death has come. But did it ever leave? Use Death\'s manifestation to signal new beginnings. What once was in gone.',
+      message: 'Death has come. But did it ever leave? Use Death\'s manifestation to signal new beginnings. What once was is gone, let it go.',
       src: Death,
     },
     {
