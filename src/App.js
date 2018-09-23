@@ -44,6 +44,10 @@ class App extends React.Component {
     this.setState({ cards: cards })
   }
 
+  componentDidMount(){
+    this.shuffle();
+  }
+
   render() {
 
     return (
