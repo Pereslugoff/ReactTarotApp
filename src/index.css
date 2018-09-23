@@ -126,13 +126,17 @@ body {
 .ui.modal {
   font-family: 'Aladin', cursive;
 }
+
+.modal {
+  animation: slidedown 1s;
+}
 /* entire container, keeps perspective */
 .flip-container {
   margin-left: auto;
   margin-right: auto;
 	perspective: 1000px;
   position: relative;
-  /*animation: slidein 2s;*/
+  animation: slidein 2s;
 }
 
 /* flip the pane when hovered */
@@ -174,10 +178,19 @@ body {
 
 @keyframes slidein {
   from {
-    transform: translateX(400%)
+    transform: translateX(650%)
   }
   to {
     margin-left: translateX(0%);
+  }
+}
+
+@keyframes slidedown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
   }
 }
 
