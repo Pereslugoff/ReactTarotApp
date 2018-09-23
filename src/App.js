@@ -9,7 +9,7 @@ class App extends React.Component {
   state = {
     cards: cardData,
 
-    numCards: 3,
+    numCards: 0,
 
   };
 
